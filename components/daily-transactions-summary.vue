@@ -1,0 +1,36 @@
+<template>
+  <div
+    class="grid grid-cols-2 py-4 border-b border-gray-200 dark:border-gray-800 text-gray-500 dark:text-gray-400 font-bold"
+  >
+    <div class="flex items-center justify-between mr-10">
+      {{ date }}
+    </div>
+
+    <div class="flex items-center justify-end">{{ currency }}</div>
+  </div>
+</template>
+
+<script setup>
+const props = defineProps({
+  date: String,
+  transactions: Array,
+});
+
+const sum = computed(() => {
+  let sum = 0;
+
+  for (const trans of props.transactions) {
+    if (trans.type === "Income") {
+      sum += trans.amount;
+    } else {
+      sum -= trans.amount;
+    }
+  }
+
+  return sum;
+});
+
+const { currency } = useCurrency(sum.value);
+</script>
+
+<style></style>
