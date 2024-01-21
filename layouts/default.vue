@@ -1,6 +1,8 @@
 <template>
+  <NuxtLoadingIndicator duration="1000" color="rgba(22, 163, 74, 1)" />
   <div class="container mx-auto max-w-4xl">
     <AppHeader />
+
     <main class="my-10">
       <slot />
     </main>

@@ -7,15 +7,19 @@
     "dev": "nuxt dev --host",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "seed": "node seed.mjs"
   },
   "devDependencies": {
+    "@faker-js/faker": "^8.3.1",
     "@nuxtjs/supabase": "^1.1.5",
-    "nuxt": "^3.9.1",
+    "nuxt": "^3.8.2",
     "vue": "^3.4.10",
     "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "@nuxt/ui": "^2.12.0"
+    "@nuxt/ui": "^2.12.0",
+    "date-fns": "^3.3.0",
+    "zod": "^3.22.4"
   }
 }
